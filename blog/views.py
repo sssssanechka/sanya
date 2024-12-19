@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from blog.models import Article
 
 
@@ -11,3 +11,11 @@ def index(request):
 
     return render(request, "list.html", context)
 
+def detail(request, post_id):
+    post = get_object_or_404(Article, id=post_id)
+
+    context = {
+        "post": post,
+    }
+
+    return render(request, "detail.html", context)

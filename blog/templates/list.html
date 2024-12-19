@@ -1,7 +1,7 @@
 {% if data %}
     <ul>
     {% for post in data %}
-        <li><a href="/pots/{{ post.id }}/">{{ post.title }}</a></li>
+    <li><a href="/posts/{{ post.id }}/">{{ post.title }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
